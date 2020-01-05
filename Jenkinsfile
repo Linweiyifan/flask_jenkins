@@ -9,6 +9,16 @@ pipeline {
                 sh 'python test.py'
             }
         }
+        stage('end') {
+            steps {
+                sh 'echo "测试结束"'
+            }
+        }
+    }
+    post {
+        always {
+            echo 'This will always run'
+        }
     }
 }
     
